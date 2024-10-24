@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Vacancies.AdminPanel</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper" class="wrapper bg-ash">
+    <div class="dashboard-page-one">
+        <header>
+            <div class="nav-bar-header-one">
+                <div class="header-logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Admin Panel">
+                    </a>
+                </div>
+                <div class="toggle-button sidebar-toggle">
+                    <button type="button" class="item-link">
+                        <span class="btn-icon-wrap">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <!-- Sidebar Area Start Here -->
+            <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
+                <div class="mobile-sidebar-header d-md-none">
+                    <div class="header-logo">
+                        <a href="/"><img src="img/logo1.png" alt="logo"></a>
+                    </div>
+                </div>
+                <div class="sidebar-menu-content">
+                    <ul class="nav nav-sidebar-menu sidebar-toggle-view">
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="flaticon-multiple-users-silhouette"></i><span>Applicants</span>
+                            </a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="all-teacher.html" class="nav-link">
+                                        <i class="fas fa-angle-right"></i>All
+                                        Teachers
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="teacher-details.html" class="nav-link">
+                                        <i class="fas fa-angle-right"></i>Teacher Details
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="add-teacher.html" class="nav-link">
+                                        <i class="fas fa-angle-right"></i>Add
+                                        Teacher
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="teacher-payment.html" class="nav-link">
+                                        <i class="fas fa-angle-right"></i>Payment
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item sidebar-nav-item">
+                            <a asp-area="" asp-page="/Vacancies" class="nav-link">
+                                <i class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Vacancies</span>
+                            </a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a asp-page="/Vacancies" class="nav-link">
+                                        <i class="fas fa-angle-right"></i>All
+                                        Vacancies
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="add-class.html" class="nav-link">
+                                        <i class="fas fa-angle-right"></i>Add New Or Edit
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-page="/Questions" class="nav-link menu-active">
+                                <i class="flaticon-open-book"></i><span class="menu-active">Questions</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="account-settings.html" class="nav-link">
+                                <i class="flaticon-settings"></i><span>Account</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Sidebar Area End Here -->
+        </header>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2024 - Vacancies.AdminPanel - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            </div>
+        </footer>
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/sidebar.js"></script>
+
+        @await RenderSectionAsync("Scripts", required: false)
+    </div>
+    </div>
+</body>
+</html>

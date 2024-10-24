@@ -1,0 +1,42 @@
+﻿@page "/{VacancyId:int}/applicants"
+@model ApplicantsModel
+@{
+}
+
+<div class="card height-auto">
+    <div class="card-body">
+        <div class="heading-layout1">
+            <div class="item-title">
+                <h3>All Applicants for Vacancy @Model._applicantsViewModel?.FirstOrDefault()?.Vacancy.Header</h3>
+            </div>
+
+        </div>
+        <div class="table-responsive">
+            <table class="table display data-table text-nowrap">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>LastName</th>
+                        <th>AppliedDate</th>
+                        <th>Question Count</th>
+                        <th>Answered</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var applicant in Model._applicantsViewModel)
+                    {
+                        <tr>
+                            <td>@applicant.User.Name </td>
+                            <td>@applicant.User.Surname</td>
+                            <td>@applicant.AppliedDate</td>
+                            <td>@applicant.Vacancy.QuestionCount</td>
+                            <td>@applicant.Answers.Count </td>
+                            <td><a class="btn btn-primary" href="/@Model.VacancyId/@applicant.User.Id/applicants">Detail</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
